@@ -3,19 +3,19 @@ const ctx = canvas.getContext("2d");
 const sizeselector = document.querySelector("#rectsize");
 
 //Arbitrary canvas size
-canvas.height = 600;
-canvas.width = 600;
+canvas.height = 450;
+canvas.width = 450;
 
 //Display a color when no noise generated
 ctx.fillStyle = "grey";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-let chosen; //Keep track of the type of noise, to then generate it when changed square size
+let chosenNoise; //Keep track of the type of noise, to then generate it when changed square size
 
 //Main function
 const createnoise = (type) => {
   ctx.beginPath();
-  chosen = type;
+  chosenNoise = type;
   for (let i = 0; i < canvas.width; i++) {
     for (let j = 0; j < canvas.height; j++) {
       if (type === "bw") {
@@ -36,12 +36,12 @@ const createnoise = (type) => {
 
 //Setting up the range input
 sizeselector.min = 1;
-sizeselector.max = canvas.height;
+sizeselector.max = canvas.height / 3;
 sizeselector.step = 1;
 
 //Change the size of the squares
 let rectSize = 5;
 const setRectSize = () => {
   rectSize = sizeselector.value;
-  createnoise(chosen);
+  createnoise(chosenNoise);
 };

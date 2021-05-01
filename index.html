@@ -15,13 +15,16 @@
       <div class="controller">
         <button onclick="createnoise('bw')">Black/White</button>
         <button onclick="createnoise('gs')">Greyscale</button>
-        <button onclick="createnoise('color')">Color</button>
-        <input
-          type="range"
-          name="rectsize"
-          id="rectsize"
-          onchange="setRectSize()"
-        />
+        <button onclick="createnoise('color')">Colorful</button>
+        <div class="size">
+          <label for="rectsize">Squares size:</label>
+          <input
+            type="range"
+            name="rectsize"
+            id="rectsize"
+            onchange="setRectSize()"
+          />
+        </div>
       </div>
     </div>
   </body>
