@@ -8,5 +8,5 @@ This was made with the sole intention of practicing, it is not meant to be a com
 
 ## To-do
 
-- [] Make it responsive
-- [] Add download feature
+- [ ] Make it responsive
+- [ ] Add download feature
