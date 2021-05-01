@@ -45,3 +45,21 @@ const setRectSize = () => {
   rectSize = sizeselector.value;
   createnoise(chosenNoise);
 };
+
+//Download generated noise as png image
+const downloadImage = (e) => {
+  e.preventDefault();
+  const req = prompt(
+    "You are about to download the generated noise as an image. Please enter the file's name: "
+  );
+  if (req) {
+    const link = document.createElement("a");
+    link.download = `${req}.png`;
+    link.href = canvas.toDataURL();
+    link.click();
+    link.delete;
+  }
+};
+
+canvas.addEventListener("contextmenu", downloadImage);
+canvas.addEventListener("dblclick", downloadImage);
