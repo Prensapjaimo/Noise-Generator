@@ -63,3 +63,4 @@ const downloadImage = (e) => {
 
 canvas.addEventListener("contextmenu", downloadImage);
 canvas.addEventListener("dblclick", downloadImage);
+canvas.addEventListener("touchstart", downloadImage);
